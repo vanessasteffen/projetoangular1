@@ -1,0 +1,85 @@
+<!--CRIACAO DE FORMULARIO PARA BUSCAR OS DADOS DE LARAVEL PARA O ANGULAR-->
+<div class="container">
+  <h2>
+    Olá!
+    <br>
+    Seja bem-vindo.
+  </h2>
+  <hr/>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <!--CAMPO DE NOME DO PRODUTO-->
+
+    <div class="form-group" [ngClass]="aplicaCssErro(nameprod)">
+
+      <label for="name" class="control-label">Nome do produto: </label>
+      <input type="text" class="form-control" name="name" id="name"
+             [(ngModel)]="produto.name"
+             required minlength="4" #nameprod="ngModel">
+
+      <!--mostrara na tela que precisa ser inserido os valores-->
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(nameprod)"
+        msgErro="Nome do produto é obrigatório">
+      </app-campo-control-erro>
+    </div>
+
+    <!--CAMPO DE PRECO-->
+    <div class="form-group" [ngClass]="aplicaCssErro(priceprod)">
+
+      <label for="price" class="control-label">Preço do Produto: </label>
+      <input type="text" class="form-control" name="price" id="price"
+             [(ngModel)]="produto.price" required #priceprod="ngModel">
+
+      <!--mostrara na tela que precisa ser inserido os valores-->
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(priceprod)"
+        msgErro="Preço do produto é obrigatório">
+      </app-campo-control-erro>
+    </div>
+
+
+    <!--CAMPO DE DESCRIÇÃO DO PRODUTO-->
+
+    <div class="form-group" [ngClass]="aplicaCssErro(descprod)">
+
+      <label for="description" class="control-label">Descrição do Produto: </label>
+      <input type="text" class="form-control" name="description" id="description"
+             [(ngModel)]="produto.description" required #descprod="ngModel">
+
+      <!--mostrara na tela que precisa ser inserido os valores-->
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(descprod)"
+        msgErro="Descrição do produto é obrigatório">
+      </app-campo-control-erro>
+    </div>
+
+    <!--CAMPO DE TAMANHO DO PRODUTO-->
+    <div class="form-group" [ngClass]="aplicaCssErro(sizeprod)">
+
+      <label for="size" class="control-label">Tamanho do Produto: </label>
+      <input type="text" class="form-control" name="size" id="size"
+             [(ngModel)]="produto.size" required #sizeprod="ngModel">
+
+      <!--mostrara na tela que precisa ser inserido os valores-->
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(sizeprod)"
+        msgErro="Tamanho do produto é obrigatório">
+      </app-campo-control-erro>
+    </div>
+
+
+    <div class="form-group col-sm-8">
+      <div class="">
+        <!--        <button type="cancel" class="btn btn-default">Cancelar</button>-->
+        <button type="submit" class=" btn btn-primary" [disabled]="!f.valid">Salvar</button>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <app-form-debug [form]="f"></app-form-debug>
