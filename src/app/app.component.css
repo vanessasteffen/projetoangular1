@@ -1,4 +1,17 @@
-/*.ng-invalid.ng-touched:not(form){
-  border: 1px solid red;
+#header {
+  background-color: darkseagreen;
+  width: 100%;
 }
-*/
+
+#border {
+  width: 100%;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-top: 30px;
+}
+#button1{
+  margin: 0px;
+
+}
+
+

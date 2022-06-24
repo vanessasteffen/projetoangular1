@@ -1,12 +1,14 @@
 <!--CRIACAO DE FORMULARIO PARA BUSCAR OS DADOS DE LARAVEL PARA O ANGULAR-->
-<div class="container">
+<div id="header" class="container">
   <h2>
     Olá!
     <br>
     Seja bem-vindo.
   </h2>
   <hr/>
-
+</div>
+<br>
+<div id="border">
   <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
 
     <!--CAMPO DE NOME DO PRODUTO-->
@@ -72,12 +74,11 @@
     </div>
 
 
-    <div class="form-group col-sm-8">
-      <div class="">
-
-        <button type="submit" class=" btn btn-primary" [disabled]="!formulario.valid">Salvar</button>
-        <button type="cancel" class="btn btn-default" (click)="resetar()">Cancelar</button>
-      </div>
+    <div class="form-group">
+      <p id="button1">
+        <button type="submit" class=" btn btn-success btn-lg" [disabled]="!formulario.valid">Salvar</button>
+        <button type="cancel" class="btn btn-danger btn-lg " (click)="resetar()">Cancelar</button>
+      </p>
     </div>
   </form>
 
@@ -86,3 +87,4 @@
     <router-outlet></router-outlet>
   </div>
   <app-form-debug [form]="formulario"></app-form-debug>
+</div>
