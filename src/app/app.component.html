@@ -59,8 +59,10 @@
     <div class="form-group" [ngClass]="aplicaCssErro(sizeprod)">
 
       <label for="size" class="control-label">Tamanho do Produto: </label>
-      <input type="text" class="form-control" name="size" id="size"
-             [(ngModel)]="produto.size" required #sizeprod="ngModel">
+      <select class="form-control" name="size" id="size"
+              [(ngModel)]="produto.size" required #sizeprod="ngModel">
+        <option>Numero 33</option>
+      </select>
 
       <!--mostrara na tela que precisa ser inserido os valores-->
       <app-campo-control-erro

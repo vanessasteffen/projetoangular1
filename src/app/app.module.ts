@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { FormDebugComponent } from './form-debug/form-debug.component';
-import { CampoControlErroComponent } from './campo-control-erro/campo-control-erro.component';
+import { FormDebugComponent } from './shared/form-debug/form-debug.component';
+import { CampoControlErroComponent } from './shared/campo-control-erro/campo-control-erro.component';
+import {DropdownService} from "./shared/services/dropdown.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CampoControlErroComponent } from './campo-control-erro/campo-control-er
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DropdownService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
