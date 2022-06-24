@@ -14,7 +14,7 @@
     <!--CAMPO DE NOME DO PRODUTO-->
     <div class="form-group" [ngClass]="aplicaCssErro(nameprod)">
       <label for="name" class="control-label">Nome do produto: </label>
-      <input type="text" class="form-control" name="name" id="name"
+      <input type="text" class="form-control"  name="name" id="name"
              [(ngModel)]="produto.name"
              required minlength="4" #nameprod="ngModel">
 

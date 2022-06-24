@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs";
 import {DropdownService} from "./shared/services/dropdown.service";
@@ -16,24 +16,43 @@ export class AppComponent {
   produto: any = {
     name: null,
     size: null,
-    price: null,
     description: null,
+    price: null,
+
 
   }
   res: any;
   private form: any;
-  sizes: Tamanhos[]|any;
+  sizes: Tamanhos[] | any;
   size: any;
-  private formulario: any;
+
+  public formulario: FormGroup | any;
 
   constructor(
     private http: HttpClient,
-    private dropdownservices: DropdownService) {
+    private dropdownservices: DropdownService,
+    public formBuilder: FormBuilder) {
+
+    this.formulario = this.formBuilder.group({
+      'name': new FormControl('', [Validators.required]),
+      'size': new FormControl('', [Validators.required]),
+      'description': new FormControl('', [Validators.required]),
+      'price': new FormControl('', [Validators.required]),
+
+    });
   }
 
+  resetForm(): void {
+    this.formulario.reset();
+  }
+
+
   ngOnInit() {
-  this.dropdownservices.getTamanhos()
-    .subscribe(tamanho => {this.sizes = tamanho; console.log(tamanho); });
+    this.dropdownservices.getTamanhos()
+      .subscribe(tamanho => {
+        this.sizes = tamanho;
+        console.log(tamanho);
+      });
   }
 
   onSubmit(formulario: any) {

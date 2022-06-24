@@ -8,7 +8,6 @@
   width: 100%;
   padding-left: 500px;
   padding-right: 500px;
-  padding-top: 30px;
   position: static;
 }
 #buttons{
@@ -19,7 +18,7 @@
   margin: 0;
 }
 #button1{
-  margin: 10px;
+  margin: 2px;
 }
 #button2{
   margin: 10px;
