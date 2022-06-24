@@ -18,29 +18,41 @@ export class AppComponent {
     description: null,
 
   }
-  res:any;
+  res: any;
+  private form: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
 
   }
 
-  onSubmit(form: any) {
-    console.log(form);
+  onSubmit(formulario: any) {
+    console.log(formulario);
     //console.log(form.value);
     //console.log(this.produto);
 
-    this.http.post('https://httpbin.org/get', JSON.stringify(form.value))
-      .subscribe(dados => console.log(dados));
+    this.http.post('https://httpbin.org/post', JSON.stringify(formulario.value))
+      .subscribe((dados: any) => {
+          console.log(dados);
+          //reseta o formulario
+          formulario.form.reset();
+        },
+        (error: any) => alert('erro'));
+
   }
 
-  verificaValidTouched(campo:any){
+  resetar() {
+    this.form.reset();
+  }
+
+  verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;
   }
 
-  aplicaCssErro(campo:any){
-    return{
+  aplicaCssErro(campo: any) {
+    return {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
     }

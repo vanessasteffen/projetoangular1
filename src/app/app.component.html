@@ -7,7 +7,7 @@
   </h2>
   <hr/>
 
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
 
     <!--CAMPO DE NOME DO PRODUTO-->
 
@@ -72,8 +72,9 @@
 
     <div class="form-group col-sm-8">
       <div class="">
-        <!--        <button type="cancel" class="btn btn-default">Cancelar</button>-->
-        <button type="submit" class=" btn btn-primary" [disabled]="!f.valid">Salvar</button>
+
+        <button type="submit" class=" btn btn-primary" [disabled]="!formulario.valid">Salvar</button>
+        <button type="cancel" class="btn btn-default" (click)="resetar()">Cancelar</button>
       </div>
     </div>
   </form>
@@ -82,4 +83,4 @@
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-  <app-form-debug [form]="f"></app-form-debug>
+  <app-form-debug [form]="formulario"></app-form-debug>
