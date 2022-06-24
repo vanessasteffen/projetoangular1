@@ -23,6 +23,7 @@ export class AppComponent {
   res: any;
   private form: any;
   sizes: Tamanhos[]|any;
+  size: any;
 
   constructor(
     private http: HttpClient,

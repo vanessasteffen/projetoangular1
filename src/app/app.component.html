@@ -61,7 +61,7 @@
       <label for="size" class="control-label">Tamanho do Produto: </label>
       <select class="form-control" name="size" id="size"
               [(ngModel)]="produto.size" required #sizeprod="ngModel">
-        <option>Numero 33</option>
+        <option *ngFor="let size of sizes">{{size.tamanho}}</option>
       </select>
 
       <!--mostrara na tela que precisa ser inserido os valores-->
