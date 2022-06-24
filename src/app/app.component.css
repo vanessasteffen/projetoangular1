@@ -1,6 +1,7 @@
 #header {
   background-color: #fad7bb;
   width: 100%;
+  position: static;
 }
 
 #border {
@@ -8,11 +9,20 @@
   padding-left: 500px;
   padding-right: 500px;
   padding-top: 30px;
+  position: static;
+}
+#buttons{
+  position:static;
+  display: block;
+  width: 370%;
+  text-align: center;
+  margin: 0;
 }
 #button1{
-  margin: 0px;
-
+  margin: 10px;
 }
-
+#button2{
+  margin: 10px;
+}
 
 
