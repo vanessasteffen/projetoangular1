@@ -24,6 +24,7 @@ export class AppComponent {
   private form: any;
   sizes: Tamanhos[]|any;
   size: any;
+  private formulario: any;
 
   constructor(
     private http: HttpClient,
@@ -47,7 +48,6 @@ export class AppComponent {
           formulario.form.reset();
         },
         (error: any) => alert('erro'));
-
   }
 
   resetar() {
