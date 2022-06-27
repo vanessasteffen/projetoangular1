@@ -18,8 +18,6 @@ export class AppComponent {
     size: null,
     description: null,
     price: null,
-
-
   }
   res: any;
   private form: any;
@@ -34,6 +32,7 @@ export class AppComponent {
     public formBuilder: FormBuilder) {
 
     this.formulario = this.formBuilder.group({
+      'cliente_id': new FormControl(),
       'name': new FormControl('', [Validators.required]),
       'size': new FormControl('', [Validators.required]),
       'description': new FormControl('', [Validators.required]),
@@ -56,17 +55,27 @@ export class AppComponent {
   }
 
   onSubmit(formulario: any) {
-    console.log(formulario);
+    console.log(formulario.value);
+    formulario.value.cliente_id = 1;
     //console.log(form.value);
     //console.log(this.produto);
 
-    this.http.post('https://httpbin.org/post', JSON.stringify(formulario.value))
+    console.log(formulario.value);
+    this.http.post('http://crud-laravel.test/api/register/produto', {
+        cliente_id: 1,
+        name: formulario.value.name,
+        size: formulario.value.size,
+        price: formulario.value.price.replace(",","."),
+        description: formulario.value.description
+      }
+    )
       .subscribe((dados: any) => {
           console.log(dados);
           //reseta o formulario
           formulario.form.reset();
         },
         (error: any) => alert('erro'));
+    console.log(this.http);
   }
 
   resetar() {
