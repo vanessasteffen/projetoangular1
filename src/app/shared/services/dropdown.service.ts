@@ -14,4 +14,8 @@ export class DropdownService {
     return this.http.get('assets/dadosTamanho/tamanhosCalcados.json')
       map((res: Response) => res.json());
   }
+  // getClientes(){
+  //   return this.http.get('assets/dadosTamanho/idClientes.json')
+  //   map((res: Response) => res.json());
+  // }
 }

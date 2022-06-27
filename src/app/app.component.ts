@@ -4,6 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs";
 import {DropdownService} from "./shared/services/dropdown.service";
 import {Tamanhos} from "./shared/models/tamanhos";
+import {Name} from "./shared/models/name";
+import {Clientes} from "./shared/models/clientes";
 
 
 @Component({
@@ -19,10 +21,19 @@ export class AppComponent {
     description: null,
     price: null,
   }
+
+  cliente: any = {
+    id: null,
+    name: null,
+  }
+
+  id_client: any;
   res: any;
   private form: any;
   sizes: Tamanhos[] | any;
-  size: any;
+  clientes: Clientes[] | any;
+  results: Clientes[] | any;
+
 
   public formulario: FormGroup | any;
 
@@ -52,20 +63,27 @@ export class AppComponent {
         this.sizes = tamanho;
         console.log(tamanho);
       });
+
+    this.getClientes();
+  }
+
+
+  getClientes() {
+    this.http.get<any>("http://crud-laravel.test/api/clientes").subscribe(response => {
+      console.log(response);
+      this.clientes = response;
+    });
   }
 
   onSubmit(formulario: any) {
     console.log(formulario.value);
-    formulario.value.cliente_id = 1;
     //console.log(form.value);
     //console.log(this.produto);
-
-    console.log(formulario.value);
     this.http.post('http://crud-laravel.test/api/register/produto', {
-        cliente_id: 1,
+        cliente_id: formulario.value.cliente,
         name: formulario.value.name,
         size: formulario.value.size,
-        price: formulario.value.price.replace(",","."),
+        price: formulario.value.price.replace(",", "."),
         description: formulario.value.description
       }
     )
@@ -78,9 +96,9 @@ export class AppComponent {
     console.log(this.http);
   }
 
-  resetar() {
-    this.form.reset();
-  }
+  // resetar() {
+  //   this.formulario.value = " ";
+  // }
 
   verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;
