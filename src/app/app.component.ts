@@ -97,7 +97,8 @@ export class AppComponent {
   }
 
    resetar() {
-    delete this.formulario.value;
+    this.formulario.form.reset();
+    return this.formulario;
   }
 
   verificaValidTouched(campo: any) {
