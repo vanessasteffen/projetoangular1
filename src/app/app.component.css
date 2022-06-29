@@ -10,6 +10,9 @@
   padding-right: 10%;
   /*position: static;*/
 }
+#buttoninfo{
+ padding-left: 90%;
+}
 #buttons{
   /*position:static;*/
   /*display: block;*/
@@ -25,7 +28,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .header, .border, .buttons, .button1 {
+  .header, .border, .buttons, .button1. buttoninfo {
     float: none;
     width: 100%;
     margin-right: 0;
