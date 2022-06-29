@@ -33,8 +33,6 @@ export class AppComponent {
   sizes: Tamanhos[] | any;
   clientes: Clientes[] | any;
   results: Clientes[] | any;
-
-
   public formulario: FormGroup | any;
 
   constructor(
@@ -84,7 +82,7 @@ export class AppComponent {
         name: formulario.value.name,
         size: formulario.value.size,
         price: formulario.value.price.replace(",", "."),
-        description: formulario.value.description
+        description: formulario.value.description,
       }
     )
       .subscribe((dados: any) => {
@@ -96,10 +94,6 @@ export class AppComponent {
     console.log(this.http);
   }
 
-   resetar() {
-    this.formulario.form.reset();
-    return this.formulario;
-  }
 
   verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;
