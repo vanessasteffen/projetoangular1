@@ -8,6 +8,7 @@
   <hr/>
 </div>
 <br>
+
 <div id="border">
   <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
 
@@ -99,14 +100,15 @@
       </div>
     </div>
   </form>
-    <div id="button3" class="col-sm-12 col-md-6 col-xl-4">
-      <button class="btn btn-info btn-lg" (click)="relatorio()">Relatórios</button>
-    </div>
+  <div id="button3" class="col-sm-12 col-md-6 col-xl-4">
+    <button class="btn btn-info btn-lg" (click)="relatorio()">Relatórios</button>
+  </div>
 
 
-
-  <div class="container">
+  <div class="container"  class="container">
     <router-outlet></router-outlet>
   </div>
   <!--  <app-form-debug [form]="formulario"></app-form-debug>-->
 </div>
+
+

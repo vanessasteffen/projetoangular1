@@ -79,6 +79,7 @@ export class AppComponent {
     console.log(formulario.value);
     //console.log(form.value);
     //console.log(this.produto);
+
     this.http.post('http://crud-laravel.test/api/register/produto', {
         cliente_id: formulario.value.cliente,
         name: formulario.value.name,
@@ -97,6 +98,7 @@ export class AppComponent {
   }
 
    resetar() {
+    window.location.reload();
   }
 
   relatorio() {
