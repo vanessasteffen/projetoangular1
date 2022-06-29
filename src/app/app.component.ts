@@ -96,9 +96,9 @@ export class AppComponent {
     console.log(this.http);
   }
 
-  // resetar() {
-  //   this.formulario.value = " ";
-  // }
+   resetar() {
+    delete this.formulario.value;
+  }
 
   verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;

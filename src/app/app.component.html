@@ -13,14 +13,14 @@
 
     <!--CAMPO DE IDENTIFICAÇÃO DO CLIENTE-->
     <div class="col-sm-10">
-    <div class="form-group" [ngClass]="aplicaCssErro(namecli)">
-      <label for="cliente" class="control-label">Cliente: </label>
+      <div class="form-group" [ngClass]="aplicaCssErro(namecli)">
+        <label for="cliente" class="control-label">Cliente: </label>
 
-      <select class="form-control" name="cliente" id="cliente"
-              [(ngModel)]="cliente.name" required #namecli="ngModel">
-        <option *ngFor="let cliente of clientes" value={{cliente.id}}>{{cliente.name}}</option>
-      </select>
-        </div>
+        <select class="form-control" name="cliente" id="cliente"
+                [(ngModel)]="cliente.name" required #namecli="ngModel">
+          <option *ngFor="let cliente of clientes" value={{cliente.id}}>{{cliente.name}}</option>
+        </select>
+      </div>
 
       <!--mostrara na tela que precisa ser inserido os valores-->
       <app-campo-control-erro
@@ -32,12 +32,12 @@
 
     <!--CAMPO DE NOME DO PRODUTO-->
     <div class="col-sm-10">
-    <div class="form-group" [ngClass]="aplicaCssErro(nameprod)">
-      <label for="name" class="control-label">Nome do produto: </label>
-      <input type="text" class="form-control" name="name" id="name"
-             [(ngModel)]="produto.name"
-             required minlength="4" #nameprod="ngModel">
-    </div>
+      <div class="form-group" [ngClass]="aplicaCssErro(nameprod)">
+        <label for="name" class="control-label">Nome do produto: </label>
+        <input type="text" class="form-control" name="name" id="name"
+               [(ngModel)]="produto.name"
+               required minlength="4" #nameprod="ngModel">
+      </div>
       <!--mostrara na tela que precisa ser inserido os valores-->
       <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(nameprod)"
@@ -47,13 +47,13 @@
 
     <!--CAMPO DE TAMANHO DO PRODUTO-->
     <div class="col-sm-10">
-    <div class="form-group" [ngClass]="aplicaCssErro(sizeprod)">
-      <label for="size" class="control-label">Tamanho do Produto: </label>
-      <select class="form-control" name="size" id="size"
-              [(ngModel)]="produto.size" required #sizeprod="ngModel">
-        <option *ngFor="let size of sizes">{{size.tamanho}}</option>
-      </select>
-    </div>
+      <div class="form-group" [ngClass]="aplicaCssErro(sizeprod)">
+        <label for="size" class="control-label">Tamanho do Produto: </label>
+        <select class="form-control" name="size" id="size"
+                [(ngModel)]="produto.size" required #sizeprod="ngModel">
+          <option *ngFor="let size of sizes">{{size.tamanho}}</option>
+        </select>
+      </div>
       <!--mostrara na tela que precisa ser inserido os valores-->
       <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(sizeprod)"
@@ -63,11 +63,11 @@
 
     <!--CAMPO DE DESCRIÇÃO DO PRODUTO-->
     <div class="col-sm-10">
-    <div class="form-group" [ngClass]="aplicaCssErro(descprod)">
-      <label for="description" class="control-label">Descrição do Produto: </label>
-      <input type="text" class="form-control" name="description" id="description"
-             [(ngModel)]="produto.description" required #descprod="ngModel">
-    </div>
+      <div class="form-group" [ngClass]="aplicaCssErro(descprod)">
+        <label for="description" class="control-label">Descrição do Produto: </label>
+        <input type="text" class="form-control" name="description" id="description"
+               [(ngModel)]="produto.description" required #descprod="ngModel">
+      </div>
       <!--mostrara na tela que precisa ser inserido os valores-->
       <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(descprod)"
@@ -77,11 +77,11 @@
 
     <!--CAMPO DE PRECO-->
     <div class="col-sm-10">
-    <div class="form-group" [ngClass]="aplicaCssErro(priceprod)">
-      <label for="price" class="control-label">Preço do Produto: </label>
-      <input type="text" class="form-control" name="price" id="price"
-             [(ngModel)]="produto.price" required #priceprod="ngModel">
-    </div>
+      <div class="form-group" [ngClass]="aplicaCssErro(priceprod)">
+        <label for="price" class="control-label">Preço do Produto: </label>
+        <input type="text" class="form-control" name="price" id="price"
+               [(ngModel)]="produto.price" required #priceprod="ngModel">
+      </div>
       <!--mostrara na tela que precisa ser inserido os valores-->
       <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(priceprod)"
@@ -94,9 +94,9 @@
       <div id="button1" class="col-sm-12 col-md-6 col-xl-4">
         <button type="submit" class="btn btn-success btn-lg" [disabled]="!formulario.valid">Salvar</button>
       </div>
-      <!--      <div id="button2" class="col-sm-12 col-md-6 col-xl-4">-->
-      <!--        <button class="btn btn-danger btn-lg" (click)="resetar()">Cancelar</button>-->
-      <!--      </div>-->
+      <div id="button2" class="col-sm-12 col-md-6 col-xl-4">
+        <button class="btn btn-danger btn-lg" (click)="resetar()">Cancelar</button>
+      </div>
     </div>
 
 
@@ -104,5 +104,5 @@
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-<!--  <app-form-debug [form]="formulario"></app-form-debug>-->
+  <!--  <app-form-debug [form]="formulario"></app-form-debug>-->
 </div>
