@@ -21,14 +21,17 @@
   /*margin: 0;*/
 }
 #button1{
-  margin: 2px;
+  margin: 10px;
 }
 #button2{
   margin: 10px;
 }
+#button3{
+  margin: 10px;
+}
 
 @media screen and (max-width: 500px) {
-  .header, .border, .buttons, .button1. buttoninfo {
+  .header, .border, .button1, .button2, .button3 {
     float: none;
     width: 100%;
     margin-right: 0;
