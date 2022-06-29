@@ -1,27 +1,35 @@
 #header {
   background-color: #fad7bb;
   width: 100%;
-  position: static;
+  /*position: static;*/
 }
 
 #border {
-  width: 100%;
-  padding-left: 500px;
-  padding-right: 500px;
-  position: static;
+  /*width: 100%;*/
+  padding-left: 20%;
+  padding-right: 10%;
+  /*position: static;*/
 }
 #buttons{
-  position:static;
-  display: block;
-  width: 370%;
-  text-align: center;
-  margin: 0;
+  /*position:static;*/
+  /*display: block;*/
+  /*width: 370%;*/
+  /*text-align: center;*/
+  /*margin: 0;*/
 }
 #button1{
   margin: 2px;
 }
 #button2{
   margin: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .header, .border, .buttons, .button1 {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 
