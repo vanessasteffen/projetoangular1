@@ -95,14 +95,12 @@
       <div id="button1" class="col-sm-12 col-md-6 col-xl-4">
         <button type="submit" class="btn btn-success btn-lg" [disabled]="!formulario.valid">Salvar</button>
       </div>
-      <div id="button2" class="col-sm-12 col-md-6 col-xl-4">
-        <button class="btn btn-danger btn-lg" (click)="resetForm()">Cancelar</button>
-      </div>
+<!--      <div id="button3" class="col-sm-12 col-md-6 col-xl-4">-->
+<!--        <button type="submit" class="btn btn-info btn-lg" (click)="relatorio()">Relatório</button>-->
+<!--      </div>-->
     </div>
   </form>
-  <div id="button3" class="col-sm-12 col-md-6 col-xl-4">
-    <button class="btn btn-info btn-lg" (click)="relatorio()">Relatórios</button>
-  </div>
+
 
   <div class="container" class="container">
     <router-outlet></router-outlet>
