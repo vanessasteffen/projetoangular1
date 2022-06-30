@@ -2,13 +2,13 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 82%;
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 2px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 9px;
 }
 
 tr:nth-child(even) {
