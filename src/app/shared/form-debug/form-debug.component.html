@@ -1,14 +1,19 @@
-<div style="margin-top: 20px" *ngIf="form" >
-  <div>
-    Detalhes do Formulário.
+<div>
+  Pedidos
+  <div style="margin-top: 20px" *ngFor="let pedido of form">
+    <pre>
+
+      Cliente: {{pedido.cliente_id}}
+
+      Nome do Produto: {{pedido.name}}
+
+      Tamanho: {{pedido.size}}
+
+      Preço: {{pedido.price.toString().replace('.', ',')}}
+
+      Descrição: {{pedido.description}}
+
+      Data do Pedido: {{ pedido.created_at | date: 'dd/MM/yyyy' }}
+  </pre>
   </div>
-  <pre>
-    Formulário Válido: {{form.valid}}
-  </pre>
-  <pre>
-    Formulário Submetido: {{form.submitted}}
-  </pre>
-  <pre>
-    Valores:<br> {{form.value | json}}
-  </pre>
 </div>

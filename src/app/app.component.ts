@@ -6,7 +6,7 @@ import {DropdownService} from "./shared/services/dropdown.service";
 import {Tamanhos} from "./shared/models/tamanhos";
 import {Name} from "./shared/models/name";
 import {Clientes} from "./shared/models/clientes";
-
+import {Pedidos} from "./shared/models/pedidos";
 
 @Component({
   selector: 'app-root',
@@ -32,6 +32,7 @@ export class AppComponent {
   private form: any;
   sizes: Tamanhos[] | any;
   clientes: Clientes[] | any;
+  pedidos: Pedidos[] | any;
   results: Clientes[] | any;
 
 
@@ -65,8 +66,15 @@ export class AppComponent {
       });
 
     this.getClientes();
+    this.getProdutos();
   }
 
+  getProdutos() {
+    this.http.get<any>("http://crud-laravel.test/api/produto").subscribe(response => {
+      console.log(response);
+      this.pedidos = response;
+    });
+  }
 
   getClientes() {
     this.http.get<any>("http://crud-laravel.test/api/clientes").subscribe(response => {
