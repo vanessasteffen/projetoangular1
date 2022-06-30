@@ -95,6 +95,7 @@ export class AppComponent {
         price: formulario.value.price.replace(",", "."),
         description: formulario.value.description
       }
+
     )
       .subscribe((dados: any) => {
           console.log(dados);
@@ -104,13 +105,23 @@ export class AppComponent {
         (error: any) => alert('erro'));
     console.log(this.http);
   }
+  delete(id : number){
+    this.http.delete('http://crud-laravel.test/api/produto/', {
 
-   resetar() {
-    window.location.reload();
+
+    }
+    )
+
+   // )
+   //    .subscribe((dados: any) => {
+   //        console.log(dados);
+   //        //reseta o formulario
+   //        formulario.form.reset();
+   //      },
+   //      (error: any) => alert('erro'));
+   //  console.log(this.http);
   }
 
-  relatorio() {
-  }
 
   verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;
