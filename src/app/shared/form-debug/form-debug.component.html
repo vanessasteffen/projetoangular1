@@ -8,6 +8,7 @@
         <th>Descrição</th>
         <th>Preço</th>
         <th>Data do Pedido</th>
+        <th></th>
       </tr>
       <tr *ngFor="let pedido of form">
         <td>{{pedido.cliente_id}}</td>
@@ -16,7 +17,7 @@
         <td>{{pedido.size}}</td>
         <td>{{pedido.price.toString().replace('.', ',')}}</td>
         <td>{{pedido.created_at | date: 'dd/MM/yyyy'}}</td>
-        <td><button>Delete</button></td>
+        <td><button (click)="delete(pedido.id)">Delete</button></td>
       </tr>
     </table>
 </div>
