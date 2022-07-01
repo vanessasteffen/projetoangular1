@@ -35,7 +35,6 @@ export class AppComponent {
   pedidos: Pedidos[] | any;
   results: Clientes[] | any;
 
-
   public formulario: FormGroup | any;
 
   constructor(
@@ -56,7 +55,6 @@ export class AppComponent {
   resetForm(): void {
     this.formulario.reset();
   }
-
 
   ngOnInit() {
     this.dropdownservices.getTamanhos()
