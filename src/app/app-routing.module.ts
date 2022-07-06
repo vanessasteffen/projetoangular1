@@ -6,6 +6,7 @@ import {FormDebugComponent} from "./shared/form-debug/form-debug.component";
 const routes: Routes = [
   // {path: '', component : AppComponent},
    {path: 'pedidos', component : FormDebugComponent},
+  {path: 'editar/:id', component: FormDebugComponent}
 ];
 
 @NgModule({
