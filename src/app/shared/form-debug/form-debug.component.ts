@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-form-debug',
@@ -12,7 +12,9 @@ export class FormDebugComponent implements OnInit {
   @Input() form: any;
 
   constructor(
-    private http: HttpClient) {
+    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class FormDebugComponent implements OnInit {
 
   update(pedido: any) {
     console.log(pedido.cliente_id);
+
     this.http.put('http://crud-laravel.test/api/update/produto/' + pedido.id, {
 
         cliente_id: pedido.cliente_id,
