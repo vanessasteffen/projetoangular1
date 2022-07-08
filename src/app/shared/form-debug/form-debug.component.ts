@@ -12,9 +12,7 @@ export class FormDebugComponent implements OnInit {
   @Input() form: any;
 
   constructor(
-    private http: HttpClient,
-    private router: Router,
-    private route: ActivatedRoute) {
+    private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -30,6 +28,9 @@ export class FormDebugComponent implements OnInit {
   }
 
   update(pedido: any) {
+    window.open(window.location.href+"/update", '_blank');
+/*
+
     console.log(pedido.cliente_id);
 
     this.http.put('http://crud-laravel.test/api/update/produto/' + pedido.id, {
@@ -45,6 +46,6 @@ export class FormDebugComponent implements OnInit {
         console.log(dados);
       },
       (success: any) => 'deu certo')//location.reload());
-    console.log(this.http);
+    console.log(this.http);*/
   }
 }
