@@ -1,16 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { FormDebugComponent } from './shared/form-debug/form-debug.component';
-import { CampoControlErroComponent } from './shared/campo-control-erro/campo-control-erro.component';
+import {FormDebugComponent} from './shared/form-debug/form-debug.component';
+import {CampoControlErroComponent} from './shared/campo-control-erro/campo-control-erro.component';
 import {DropdownService} from "./shared/services/dropdown.service";
-import { ProductModalComponent } from './product-modal/product-modal.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import { FormDialogComponent } from './product-modal/form-dialog/form-dialog.component';
+import {ProductModalComponent} from './product-modal/product-modal.component';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {FormDialogComponent} from './product-modal/form-dialog/form-dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {UpdateOrderComponents} from "./shared/update-order.components";
+
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import { FormDialogComponent } from './product-modal/form-dialog/form-dialog.com
     CampoControlErroComponent,
     ProductModalComponent,
     FormDialogComponent,
+    UpdateOrderComponents
   ],
   imports: [
     BrowserModule,
@@ -26,9 +30,15 @@ import { FormDialogComponent } from './product-modal/form-dialog/form-dialog.com
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    BrowserAnimationsModule,
+
   ],
-  providers: [DropdownService],
+  providers: [DropdownService, {
+    provide: MatDialogRef,
+    useValue: {}
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
