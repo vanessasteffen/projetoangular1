@@ -1,6 +1,8 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute, Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {UpdateOrderComponents} from "../update-order.components";
+
 
 @Component({
   selector: 'app-form-debug',
@@ -11,8 +13,11 @@ export class FormDebugComponent implements OnInit {
 
   @Input() form: any;
 
+
   constructor(
-    private http: HttpClient) {
+    private http: HttpClient,
+    public dialog:MatDialog
+  ) {
   }
 
   ngOnInit(): void {
@@ -25,6 +30,14 @@ export class FormDebugComponent implements OnInit {
       },
       (success: any) => location.reload());
     console.log(this.http);
+  }
+
+  updateOrder(id: number){
+    const dialogRef = this.dialog.open(this.UpdateOrderComponents, {
+      minWidth: '400px'
+    })
+    dialogRef.componentInstance.id = id;
+    dialogRef.afterClosed().subscribe()
   }
 
   // update(pedido: any) {
