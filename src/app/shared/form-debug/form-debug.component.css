@@ -3,7 +3,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 82%;
-  text-align-last:center;
+  text-align-last: center;
 }
 
 td, th {
@@ -16,6 +16,7 @@ td, th {
 tr:nth-child(even) {
   background-color: #fad7bb;
 }
+
 .modal {
   background: #333333;
   border-radius: 8px;

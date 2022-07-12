@@ -5,8 +5,8 @@ import {DatabaseService} from './services/database/database.service';
 
 @Component({
   selector: 'app-update-order',
-  templateUrl: './update-order.component.html',
-  styleUrls: ['./update-order.component.css']
+  templateUrl: './update-order.components.html',
+  styleUrls: ['./update-order.components.css']
 })
 export class UpdateOrderComponents implements OnInit {
 
@@ -41,7 +41,7 @@ export class UpdateOrderComponents implements OnInit {
     this.databaseService.put('update/produto/' + this.id, this.updateOrder).subscribe(() => {
 
     })
-    alert('works')
+    alert('Deseja salvar as alterações?')
     return this.cancel()
   }
 

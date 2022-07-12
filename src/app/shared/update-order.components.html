@@ -1,4 +1,4 @@
-<h1>Edite sua ação!</h1>
+<h1>Faça as suas alterações!</h1>
 <form>
   <div class="product-name">
     <label>Nome do produto:</label>
@@ -6,16 +6,16 @@
            [(ngModel)]="updateOrder['name']" type="text" name="nome do produto: ">
   </div>
 
+  <div class="description">
+    <label>Descrição:</label>
+    <input matInput
+           [(ngModel)]="updateOrder['description']" type="text" name="descrição: ">
+  </div>
+
   <div class="size">
     <label>Tamanho: </label>
     <input matInput
            [(ngModel)]="updateOrder['size']" type="number" name="tamanho: ">
-  </div>
-
-  <div class="description">
-    <label>Descriçao:</label>
-    <input matInput
-           [(ngModel)]="updateOrder['description']" type="text" name="descrição: ">
   </div>
 
   <div class="value">
@@ -25,5 +25,5 @@
   </div>
 
 </form>
-<button type="button" class="edit-order" (click)="updateOrderButton()">CONFIRMAR ALTERAÇÃO</button>
-<button  type="button" class="edit-order" (click)="cancel()">CANCELAR</button>
+<button type="button" class="edit-order-success" (click)="updateOrderButton()">Confirmar as Alterações</button>
+<button  type="button" class="edit-order-cancel" (click)="cancel()">Cancelar</button>

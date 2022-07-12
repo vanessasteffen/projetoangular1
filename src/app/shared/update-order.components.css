@@ -1,21 +1,19 @@
 h1 {
-  letter-spacing: 5px;
   text-align: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 30px;
 }
 
 
 label {
   font-weight: 700;
-  letter-spacing: 2px;
 }
 
-input[type="number"], input[type="text"]{
+input[type="number"], input[type="text"] {
   width: 100%;
   border: none;
-  border-bottom: 2px solid #5294ef;
+  border-bottom: 2px solid #fad7bb;
   color: #000000;
   background: transparent;
   height: 26px;
@@ -27,7 +25,7 @@ input[type="number"], input[type="text"]{
 }
 
 
-.edit-order{
+.edit-order-success {
   transition: ease-in-out 0.3s;
   width: 100%;
   border: none;
@@ -36,13 +34,29 @@ input[type="number"], input[type="text"]{
   font-size: 18px;
   margin-top: 10px;
   outline: none;
-  background-color: #5294ef;
+  background-color: #43d416;
   color: #ffffff;
   border-radius: 5px;
   letter-spacing: 2px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.edit-order:hover{
-  background-color: #1d6dd4;
+.edit-order-cancel {
+  transition: ease-in-out 0.3s;
+  width: 100%;
+  border: none;
+  font-weight: 400;
+  height: 40px;
+  font-size: 18px;
+  margin-top: 10px;
+  outline: none;
+  background-color: #ef2d2d;
+  color: #ffffff;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.edit-order:hover {
+  background-color: #fad7bb;
 }
